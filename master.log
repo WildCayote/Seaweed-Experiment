@@ -1,0 +1,20 @@
+I1209 11:08:34.252816 file_util.go:27 Folder ./master Permission: -rwxrwxrwx
+I1209 11:08:34.325514 master.go:282 current: 192.168.1.3:1111 peers:
+I1209 11:08:34.325514 master_server.go:134 Volume Size Limit is 1024 MB
+I1209 11:08:34.325514 master.go:163 Start Seaweed Master 30GB 3.80 7b3c0e937f83d3b49799b5d5dcb98b0043461c25 at 192.168.1.3:1111
+F1209 11:08:34.326610 master.go:166 Master startup error: listen tcp 192.168.1.3:1111: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+goroutine 1 [running]:
+github.com/seaweedfs/seaweedfs/weed/glog.stacks(0x0)
+	/github/workspace/weed/glog/glog.go:768 +0x85
+github.com/seaweedfs/seaweedfs/weed/glog.(*loggingT).output(0x4dbc9c0, 0x3, 0xc000792230, {0x3bd04cd?, 0xc000987bc8?}, 0x1?, 0x0)
+	/github/workspace/weed/glog/glog.go:719 +0x38a
+github.com/seaweedfs/seaweedfs/weed/glog.(*loggingT).printf(0x4dbc9c0, 0x3, {0x2cd808f, 0x18}, {0xc000987bc8, 0x1, 0x1})
+	/github/workspace/weed/glog/glog.go:657 +0x10a
+github.com/seaweedfs/seaweedfs/weed/glog.Fatalf(...)
+	/github/workspace/weed/glog/glog.go:1154
+github.com/seaweedfs/seaweedfs/weed/command.startMaster({0xc0005b4088, 0xc0005b45e0, 0xc00060e050, 0xc00060e070, 0xc00060e080, 0xc00060e0a0, 0xc0005b46d0, 0xc0005b4705, 0xc0005b4720, 0xc00060e0b0, ...}, ...)
+	/github/workspace/weed/command/master.go:166 +0x399
+github.com/seaweedfs/seaweedfs/weed/command.runMaster(0x4d95cd8?, {0xc00015c020?, 0x3?, 0x6?})
+	/github/workspace/weed/command/master.go:138 +0x430
+main.main()
+	/github/workspace/weed/weed.go:97 +0x3bc

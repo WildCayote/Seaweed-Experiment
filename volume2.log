@@ -1,0 +1,55 @@
+I1209 11:08:34.273731 file_util.go:27 Folder ./volume1 Permission: -rwxrwxrwx
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 20 version 3
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 12 version 3
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 18 version 3
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 13 version 3
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 11 version 3
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 12
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 10 version 3
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 20
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 17 version 3
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 13
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 10
+I1209 11:08:34.380429 volume_loading.go:155 loading memory index volume1/20.idx to memory
+I1209 11:08:34.380429 volume_loading.go:155 loading memory index volume1/testbucket_10.idx to memory
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 11
+I1209 11:08:34.380429 volume_loading.go:96 readSuperBlock volume 16 version 3
+I1209 11:08:34.380936 volume_loading.go:155 loading memory index volume1/testbucket_11.idx to memory
+I1209 11:08:34.380429 volume_loading.go:155 loading memory index volume1/testbucket_12.idx to memory
+I1209 11:08:34.380429 volume_loading.go:137 checking volume data integrity for volume 18
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/testbucket_10.dat, replication=000 v=3 size=8 ttl=
+I1209 11:08:34.380429 volume_loading.go:155 loading memory index volume1/testbucket_13.idx to memory
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/20.dat, replication=000 v=3 size=1992 ttl=
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/testbucket_12.dat, replication=000 v=3 size=8 ttl=
+I1209 11:08:34.380936 volume_loading.go:137 checking volume data integrity for volume 16
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/testbucket_11.dat, replication=000 v=3 size=8 ttl=
+I1209 11:08:34.380936 volume_loading.go:137 checking volume data integrity for volume 17
+I1209 11:08:34.380936 volume_loading.go:155 loading memory index volume1/18.idx to memory
+I1209 11:08:34.380936 volume_loading.go:155 loading memory index volume1/16.idx to memory
+I1209 11:08:34.380936 volume_loading.go:155 loading memory index volume1/17.idx to memory
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/18.dat, replication=000 v=3 size=3448 ttl=
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/testbucket_13.dat, replication=000 v=3 size=504 ttl=
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/16.dat, replication=000 v=3 size=1992 ttl=
+I1209 11:08:34.380936 disk_location.go:183 data file ./volume1/17.dat, replication=000 v=3 size=3384 ttl=
+I1209 11:08:34.380936 disk_location.go:239 Store started on dir: ./volume1 with 8 volumes max 8
+I1209 11:08:34.380936 disk_location.go:242 Store started on dir: ./volume1 with 0 ec shards
+I1209 11:08:34.380936 volume_grpc_client_to_master.go:52 Volume server start with seed master nodes: [localhost:1111]
+F1209 11:08:34.381472 volume.go:338 failed to listen on grpc port 12222: listen tcp 192.168.1.3:12222: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+goroutine 1 [running]:
+github.com/seaweedfs/seaweedfs/weed/glog.stacks(0x0)
+	/github/workspace/weed/glog/glog.go:768 +0x85
+github.com/seaweedfs/seaweedfs/weed/glog.(*loggingT).output(0x4dbc9c0, 0x3, 0xc000e047e0, {0x3bd054a?, 0xc000d07660?}, 0x2?, 0x0)
+	/github/workspace/weed/glog/glog.go:719 +0x38a
+github.com/seaweedfs/seaweedfs/weed/glog.(*loggingT).printf(0x4dbc9c0, 0x3, {0x2d0bffb, 0x24}, {0xc000d07660, 0x2, 0x2})
+	/github/workspace/weed/glog/glog.go:657 +0x10a
+github.com/seaweedfs/seaweedfs/weed/glog.Fatalf(...)
+	/github/workspace/weed/glog/glog.go:1154
+github.com/seaweedfs/seaweedfs/weed/command.VolumeServerOptions.startGrpcService({0xc0008ad040, 0xc0008ad058, 0xc0008ad060, {0xc000627020, 0x1, 0x1}, {0xc000ab80c0, 0x1, 0x2}, 0xc000881120, ...}, ...)
+	/github/workspace/weed/command/volume.go:338 +0xe6
+github.com/seaweedfs/seaweedfs/weed/command.VolumeServerOptions.startVolumeServer({0xc0008ad040, 0xc0008ad058, 0xc0008ad060, {0x0, 0x0, 0x0}, {0x0, 0x0, 0x0}, 0xc000881120, ...}, ...)
+	/github/workspace/weed/command/volume.go:268 +0xfa5
+github.com/seaweedfs/seaweedfs/weed/command.runVolume(0x4d96518?, {0xc00009e0a0?, 0x3?, 0x6?})
+	/github/workspace/weed/command/volume.go:148 +0x256
+main.main()
+	/github/workspace/weed/weed.go:97 +0x3bc
+I1209 11:08:34.382657 volume_grpc_client_to_master.go:109 Heartbeat to: localhost:1111

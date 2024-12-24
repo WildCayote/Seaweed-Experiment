@@ -1,0 +1,8 @@
+After running seaweed.sh intall awscli as follows:
+    pip install awscli
+
+Now that the installation is complete, move on to configuration of awscli following this steps:
+https://github.com/seaweedfs/seaweedfs/wiki/AWS-CLI-with-SeaweedFS
+
+Commands for awscli can be found at:
+https://docs.aws.amazon.com/cli/latest/reference/s3/
